@@ -11,7 +11,7 @@ const width = window.innerWidth;
 const height = window.innerHeight;
 
 const camera = new THREE.PerspectiveCamera(60, width / height, 1, 1000);
-camera.position.set(300, 300, 300);
+camera.position.set(0.9, -520, 6.5);
 camera.lookAt(0, 0, 0);
 
 const renderer = new THREE.WebGLRenderer();
@@ -27,3 +27,6 @@ render();
 document.body.append(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
+// controls.addEventListener('change', () => {
+//   console.log(camera.position);
+// });

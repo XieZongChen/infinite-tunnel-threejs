@@ -13,7 +13,7 @@ texture.colorSpace = THREE.SRGBColorSpace;
 
 const material = new THREE.MeshBasicMaterial({
   map: texture, // 纹理贴图
-  side: THREE.DoubleSide, // 双面渲染
+  side: THREE.BackSide, // 材质反面可见
 });
 
 const tunnel = new THREE.Mesh(geometry, material);
