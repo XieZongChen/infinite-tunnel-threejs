@@ -10,6 +10,8 @@ const geometry = new THREE.CylinderGeometry(30, 50, 1000, 32, 32, true);
 const loader = new THREE.TextureLoader();
 const texture = loader.load('./storm.png');
 texture.colorSpace = THREE.SRGBColorSpace;
+texture.wrapT = THREE.RepeatWrapping; // 纹理在 Y 轴方向重复
+texture.repeat.set(1, 2); // 纹理在 Y 轴方向重复两次
 
 const material = new THREE.MeshBasicMaterial({
   map: texture, // 纹理贴图
