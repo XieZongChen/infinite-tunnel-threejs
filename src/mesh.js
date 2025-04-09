@@ -6,8 +6,13 @@ import * as THREE from 'three';
  */
 const geometry = new THREE.CylinderGeometry(30, 50, 1000, 32, 32, true);
 
+// 创建纹理贴图
+const loader = new THREE.TextureLoader();
+const texture = loader.load('./storm.png');
+texture.colorSpace = THREE.SRGBColorSpace;
+
 const material = new THREE.MeshBasicMaterial({
-  color: 'orange',
+  map: texture, // 纹理贴图
   side: THREE.DoubleSide, // 双面渲染
 });
 
