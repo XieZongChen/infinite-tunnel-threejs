@@ -13,8 +13,10 @@ texture.colorSpace = THREE.SRGBColorSpace;
 texture.wrapT = THREE.RepeatWrapping; // 纹理在 Y 轴方向重复
 texture.repeat.set(1, 2); // 纹理在 Y 轴方向重复两次
 
+// 用 alphaMap 可以有效的模糊纹理边界，让纹理重复拼接的边界更自然
 const material = new THREE.MeshBasicMaterial({
-  map: texture, // 纹理贴图
+  transparent: true, // 开启透明度
+  alphaMap: texture, // alpha 贴图是一张灰度纹理，用于控制整个表面的不透明度
   side: THREE.BackSide, // 材质反面可见
 });
 
